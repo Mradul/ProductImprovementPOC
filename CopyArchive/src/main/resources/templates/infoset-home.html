@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/main-layout">
+
+<head>
+
+<title>Infoset Home</title>
+
+<!-- Make sure to close the angle bracket  -->
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<hr class="featurette-divider" />
+		<hr class="featurette-divider" />
+		<hr class="featurette-divider" />
+		<div class="container-fluid">
+			
+				<div class="row">
+					<div class="col-md-2">
+					<div class="list-group">
+						
+															
+								<a th:each="infoset,i : ${infosets}" th:text="${infoset.infosetName}" class="list-group-item"
+								th:attr="ng-click='loadColumns('+${infoset.infosetId}+')'"></a>
+							
+							
+								<a class="list-group-item"> Add Infoset <span class="glyphicon glyphicon-plus"></span></a>
+					
+						</div>
+					</div>
+					<div ui-grid="gridOptions" class="col-md-8"></div>
+				</div>
+			
+		</div>
+
+	</div>
+</body>
+</html>
