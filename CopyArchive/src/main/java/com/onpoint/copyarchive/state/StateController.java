@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/states/")
 public class StateController {
 @Autowired
-private IStateService ss;
+private StateService ss;
 	@RequestMapping(method=RequestMethod.GET)
 	public List<State> listAllStates(){
 		return ss.listAllStates();
